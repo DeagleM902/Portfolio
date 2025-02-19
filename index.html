@@ -3,8 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <title>Matthew Deagle's Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-</head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <style>
+      :root {
+        --bg-color: #1a1b26;
+        --text-color: #a9b1d6;
+        --primary-color: #7aa2f7;
+        --secondary-color: #292e42;
+        --accent-cyan: #2ac3de;
+        --accent-green: #9ece6a;
+      }
+
+      body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        font-family: 'Lucida Console', 'Courier New', monospace;
+        line-height: 1.6;
+      }
+
+      h1, h2, h3, h4 {
+        color: var(--primary-color);
+        letter-spacing: -0.025em;
+      }
+
+      section {
+        scroll-margin-top: 80px; /* Adjust based on your navbar height */
+      }
+
+      .text-muted {
+        color: var(--accent-cyan) !important;
+        opacity: 0.8;
+      }
+
+      .navbar {
+        background-color: var(--bg-color) !important;
+        border-bottom: 1px solid var(--secondary-color);
+      }
+
+      .nav-link {
+        position: relative;
+        transition: color 0.2s ease;
+      }
+
+      .nav-link:hover {
+        color: var(--accent-cyan) !important;
+      }
+
+      .nav-link:focus, .btn:focus {
+        outline: 2px solid var(--accent-cyan);
+        outline-offset: 2px;
+      }
+
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: var(--accent-cyan);
+        transition: width 0.3s ease;
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      .card {
+        background-color: var(--secondary-color);
+        border: 1px solid var(--secondary-color);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 15px rgba(122, 162, 247, 0.15);
+      }
+
+      .card-img-top {
+        border-bottom: 2px solid var(--primary-color);
+      }
+
+      .btn-primary {
+        background-color: var(--primary-color);
+        border: none;
+        padding: 0.75rem 1.5rem;
+      }
+
+      .btn-primary:hover {
+        background-color: var(--accent-cyan);
+        color: var(--bg-color);
+      }
+
+      .education-item {
+        border-left: 3px solid var(--accent-green);
+        padding-left: 1.5rem;
+        margin: 1.5rem 0;
+      }
+
+      footer {
+        background-color: var(--secondary-color) !important;
+        color: var(--text-color) !important;
+        border-top: 1px solid var(--secondary-color);
+        margin-top: 4rem;
+      }
+
+      ul {
+        list-style-type: square;
+        color: var(--accent-green);
+      }
+
+      li::marker {
+        color: var(--primary-color);
+      }
+
+      .badge {
+        background-color: var(--secondary-color) !important;
+        border: 1px solid var(--primary-color);
+      }
+
+    </style>
+  </head>
 <body class="bg-dark text-white">
 
     <!-- Header + navigation -->
@@ -37,86 +156,104 @@
     <div class="row justify-content-center">
     <!-- About Section -->
     <section id="about" class="col-12 col-md-10 col-lg-8 my-5">
-        <h2 class="text-center">Hi, I'm Matt.</h2>
-        <p>
-          I am a student currently enrolled in IT Programming at NSCC. 
-          Working with several languages including Java, Javascript and C, I've gained experience building various applications including web and android apps.
-          I have a particular interest in sciences, healthcare, and video game development.
-          My career goals focus on applying software and technology solutions to research and healthcare problems.
-        </p>
-    </section>
+      <h2 class="text-center mb-4">Hi, I'm Matt</h2>
+      <p class="lead">
+        I'm a programming student at NSCC, interested in video game development and health/science research.
+      </p>
+      <div class="d-flex gap-2 flex-wrap">
+          <span class="badge bg-primary">GoDot</span>
+          <span class="badge bg-primary">Java</span>
+          <span class="badge bg-primary">C/C++/C#</span>
+          <span class="badge bg-primary">Android Development</span>
+          <span class="badge bg-primary">Web Development</span>
+      </div>
+  </section>
 
     <!-- Projects Section -->
     <section id="projects" class="container col-12 my-5">
-        <h2 class="text-center">Projects</h2>
-        <div class="row justify-content-center">
-            <div class="col-sm-10 col-md-5 my-2">
-                <div class="card mb-4 bg-secondary text-white h-100">
-                  <img src="resources/images/flashcards.png" class="card-img-top" alt="Flashcard application">
-                  <div class="card-body">
-                    <h4 class="card-title">Flashcard Application</h4>
-                    <p class="card-text">
-                      A simple flashcard GUI application written in Java with Swing. 
-                      Cards must be created manually, they can be viewed sequentially or shuffled.
-                    </p>
-                    <a href="https://github.com/DeagleM902/FlashcardApp" target="_blank" class="btn btn-primary">GitHub</a>
-                  </div>
-                </div>
+      <h2 class="text-center mb-5">Projects</h2>
+      <div class="row justify-content-center g-4">
+        <div class="col-md-6">
+          <div class="card h-100">
+            <img src="resources/images/flashcards.png" class="card-img-top" alt="Flashcard application">
+            <div class="card-body d-flex flex-column">
+              <div>
+                <h4 class="card-title mb-1">Flashcard Application</h4>
+                <small class="text-muted">Java Swing • Desktop Application</small>
+                <ul class="mt-3 ps-3">
+                  <li>Designed and implemented card shuffling algorithm</li>
+                  <li>Developed custom GUI components with Swing</li>
+                  <li>Created file persistence system for card storage</li>
+                </ul>
+              </div>
+              <div class="mt-auto pt-3">
+                <a href="https://github.com/DeagleM902/FlashcardApp" target="_blank"
+                  class="btn btn-primary align-self-start">
+                  GitHub
+                </a>
+              </div>
             </div>
-            <div class="col-sm-10 col-md-5 my-2">
-                <div class="card mb-4 bg-secondary text-white h-100">
-                  <img src="resources/images/platformer.png" class="card-img-top" alt="Platformer Game WIP">
-                  <div class="card-body">
-                    <h4 class="card-title">GoDot Platformer Game WIP</h4>
-                    <p class="card-text">
-                      A demo of a 2D platformer game created in GoDot with GDScript. 
-                      Assets are either sourced from <a href="https://opengameart.org/">opengameart.org</a> or created personally.
-                    </p>
-                    <a href="https://github.com/DeagleM902/PlatformerTest" target="_blank" class="btn btn-primary">GitHub</a>
-                  </div>
-                </div>
-            </div>
+          </div>
         </div>
+        <div class="col-md-6">
+          <div class="card h-100">
+            <img src="resources/images/platformer.png" class="card-img-top" alt="Platformer Game WIP">
+            <div class="card-body d-flex flex-column">
+              <div>
+                <h4 class="card-title mb-1">GoDot Platformer Game WIP</h4>
+                <small class="text-muted">GoDot, 2D Platformer</small>
+                <ul class="mt-3 ps-3">
+                  <li>Built core platformer mechanics including jump physics and collision detection</li>
+                  <li>Implemented animated sprite system for character movement</li>
+                  <li>Designed modular level structure for easy expansion</li>
+                </ul>
+              </div>
+              <div class="mt-auto pt-3">
+                <a href="https://github.com/DeagleM902/PlatformerTest" target="_blank"
+                  class="btn btn-primary align-self-start">
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Education Section -->
     <section id="education" class="container col-12 col-md-8 col-lg-6 my-5">
-        <h2 class="text-center">Education</h2>
-        <ul class="list-group">
-            <li class="list-group-item bg-secondary text-white my-2">
-                <h5>IT Programming</h5>
-                <p>NSCC, 2025</p>
-                <p>Programming in C, C++, Java, JavaScript, HTML/CSS, SQL. I've gained experience building command-line, web, and android applications.</p>
-            </li>
-            <li class="list-group-item bg-secondary text-white my-2">
-                <h5>Doctor of Pharmacy</h5>
-                <p>Université Laval, 2019-2022</p>
-                <p>Completed 2 of 4 years. Subjects covered include: Biochemistry, Microbiology, Compounding, Professionnal Practice, Medications by class and/or body system.</p>
-            </li>
-            <li class="list-group-item bg-secondary text-white my-2">
-                <h5>Bachelor of Science</h5>
-                <p>Université Sainte-Anne, 2019</p>
-                <p>Biology, Chemistry, Biochemistry, Calculus, Linear Algebra, Physics.</p>
-                <p>Research assistant with endangered Roseate Terns.</p>
-            </li>
-            
-        </ul>
+      <h2 class="text-center mb-5">Education</h2>
+      <div class="education-item">
+          <h5>IT Programming</h5>
+          <div class="text-muted mb-2">NSCC • 2023-2025</div>
+          <p class="mb-0">Developing expertise in software development across multiple platforms and languages.</p>
+      </div>
+      <div class="education-item">
+        <h5>Doctor of Pharmacy</h5>
+        <div class="text-muted mb-2">Université Laval • 2019-2022</div>
+        <p class="mb-0">Completed 2 of 4 years. Subjects covered include: Biochemistry, Microbiology, Compounding, Professionnal Practice, Medications by class and/or body system.</p>
+      </div>
+      <div class="education-item">
+        <h5>Bachelor of Science</h5>
+        <div class="text-muted mb-2">Université Sainte-Anne • 2019</div>
+        <p class="mb-0">Biology, Chemistry, Biochemistry, Calculus, Linear Algebra, Physics. Research assistant with endangered Roseate Terns.</p>
+      </div>
     </section>
 
     <!-- Resume Section -->
     <section id="resume" class="container col-12 col-md-10 col-lg-8 my-5 text-center">
-        <h2>Resume</h2>
-        <p>
+        <h2 class="mb-4">Resume</h2>
+        <p class="text-muted mb-4">
             You can download my resume by clicking the button below.
         </p>
-        <a href="path/to/resume.pdf" download class="btn btn-success">Download Resume</a>
+        <a href="path/to/resume.pdf" download class="btn btn-primary px-4 py-2 d-inline-flex align-items-center gap-2">Download Resume</a>
     </section>
     </div>
     </div>
 
     <!-- Footer -->
-    <footer class="bg-dark text-center text-white py-3">
-        <p>&copy; Matthew Deagle 2024</p>
+    <footer class="text-center py-3">
+        <p>&copy; Matthew Deagle 2025</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
